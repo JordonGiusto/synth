@@ -1,14 +1,19 @@
 
-*{
-    border-width: 1px;
-    border-style: solid;
+:root{
+    --mainColor: hsl(0, 0%, 12%);
+    --secondaryColor: hsl(0, 0%, 14%);
+    --shadowColor: hsl(0, 0%, 10%);
+    --darkerShadowColor: hsl(0, 0%, 8%);
+    --lightColor: hsl(0, 0%, 16%);
+    --highlightColor: hsl(118, 39%, 38%);
+    --brightHighlightColor:  hsl(118, 57%, 63%);
 }
 
 body{
-    background-color: #414141;
+    background-color: hsl(0, 0%, 12%);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-    color: #fcfcfc;
+    color: var(--highlightColor);
 }
 
 div.envelope{
@@ -72,3 +77,78 @@ input[type=range] {
     background: #04AA6D;
     cursor: pointer;
   }
+
+
+  .knob-container{
+    height: 50px;
+    width:50px;
+    margin: auto;
+    justify-content: center;
+    
+  }
+
+  .knob-outer{
+    height: 50px;
+    width:50px;
+    border-radius: 50%;
+    background-color: #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: rgb(31, 31, 31);
+  }
+  .knob-inner{
+    height: 43px;
+    width:43px;
+    border-radius: 50%;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0, 0, 0);
+    border-width: 0px;
+    position: relative;
+    border-style: solid;
+  }
+  .knob-pointer{
+    position: absolute;
+    top: 2px;
+    border: none;
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: var(--highlightColor);
+  }
+
+    .envelope-knobs-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    canvas{
+        width: 100%;
+        height: 100%;
+        background-color: hsl(0, 0%, 14%);
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 50px;
+    }
+  
+.knob-inner:hover{
+    color: var(--brightHighlightColor);
+}
+
+.knob-outer:hover .knob-pointer{
+    background-color: var(--brightHighlightColor);
+}
+.knob-value{
+        text-align: center;
+        background-color: var(--shadowColor);
+}
+
+
+.knob-outer:hover + .knob-value{
+    color: var(--brightHighlightColor);
+}

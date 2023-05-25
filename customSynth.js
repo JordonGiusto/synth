@@ -5,6 +5,11 @@ class CustomSynthManager{
         this.setSynth();
     }
 
+
+    setSynthType(type){
+        this.oscillator.type = type;
+    }
+
     setSynth(synth){
         this.oscillator.connect(this.envelope);
         this.envelope.toDestination();
