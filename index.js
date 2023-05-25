@@ -36,6 +36,13 @@ let decay_value = document.getElementById("decay-value");
 let sustain_value = document.getElementById("sustain-value");
 let release_value = document.getElementById("release-value");
 
+
+attack_value.innerHTML = attackKnob.value.toFixed(2);
+decay_value.innerHTML = decayKnob.value.toFixed(2);
+sustain_value.innerHTML = sustainKnob.value.toFixed(2);
+release_value.innerHTML = releaseKnob.value.toFixed(2);
+
+
 attackKnob.onchange.push(() => {
     attack_value.innerHTML = attackKnob.value.toFixed(2);
 });
