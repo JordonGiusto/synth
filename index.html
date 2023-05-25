@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+
+</head>
+<body>
+    <script src="https://unpkg.com/tone"></script>
+    <button id="play-button">Play/Pause</button>
+
+
+    <div class="container">
+        <div class="waveform-select">
+            <div class="waveform-button selected" id="sin">sin</div>
+            <div class="waveform-button" id="saw">saw</div>
+            <div class="waveform-button" id="square">square</div>
+        </div>
+        <div class="envelope">
+            <canvas id="envelopeCanvas"></canvas>
+            <input type="range" name="attack" id="attack">
+            <input type="range" name="decay" id="decay">
+            <input type="range" name="sustain" id="sustain">
+            <input type="range" name="release" id="release">
+        </div>
+
+    </div>
+
+
+    <script src="index.js" type="module"></script>
+</body>
+</html>
