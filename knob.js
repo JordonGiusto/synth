@@ -1,7 +1,7 @@
 
 class Knob{
-    constructor(id, min = -1, max = 1, sense = .05){
-        this.container = document.getElementById(id);
+    constructor(knob, min = -1, max = 1, sense = .05){
+        this.container = knob;
         this.min = min;
         this.max = max;
         this.value = (max + min)/2;
@@ -34,7 +34,6 @@ class Knob{
             if(this.value < this.min){
                 this.value = this.min;
             }
-            console.log(this.onchange);
             if(this.onchange.length > 0){
             this.onchange.forEach(f => {
                 f();
@@ -43,7 +42,6 @@ class Knob{
         }
         let rotation = this.getRotation();
         this.knob.style.transform = "rotate(" + -rotation + "deg)";
-        console.log(rotation);
     }
 
 }

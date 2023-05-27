@@ -7,21 +7,73 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     
+   
+
 
 </head>
 <body>
     <script src="https://unpkg.com/tone"></script>
     <button id="play-button">Play/Pause</button>
 
+    <script id="oscillator-template-holder" type="text/html">
+        <div class="occilator" id="oscillator-template">
+            <div class="occilator-knobs">
+                <div class="knob-container" id="oscillator-detune">
+                    <div class="knob-title">detune</div>
+                    <div class="knob-outer">
+                        <div class="knob-inner">
+                            <div class="knob-pointer">
+            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="knob-value" id="sustain-value">-</div>
+                </div>
+                <div class="knob-container" id="oscillator-warmth-detune">
+                    <div class="knob-title" id="sustain-value">warmth</div>
+                    <div class="knob-outer">
+                        <div class="knob-inner">
+                            <div class="knob-pointer">
+            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="knob-value" id="warmth-detune-value">-</div>
+                </div>
+                <div class="knob-container" id="oscillator-volume">
+                    <div class="knob-title" id="sustain-value">volume</div>
+                    <div class="knob-outer">
+                        <div class="knob-inner">
+                            <div class="knob-pointer">
+            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="knob-value" id="warmth-detune-value">-</div>
+                </div>
+            </div>
+            <div class="oscillator-options">
+                <div id="oscillator-octave">octave</div>
+                <div id="oscillator-warmth">warm</div>
+            </div>
+            <div class="oscillator-waveform">
+                <div class="waveform-button selected" id="sin">sin</div>
+                <div class="waveform-button" id="saw">saw</div>
+                <div class="waveform-button" id="square">square</div>
+                <div class="waveform-button" id="triangle">triangle</div>
+            </div>
+        </div>
+    </script>
 
     <div class="container">
-        <div class="waveform-select">
-            <div class="waveform-button selected" id="sin">sin</div>
-            <div class="waveform-button" id="saw">saw</div>
-            <div class="waveform-button" id="square">square</div>
-        </div>
         <div class="envelope">
             <canvas id="envelopeCanvas"></canvas>
+            <div class="envelope-knobs-titles">
+                <div class="knob-title">attack</div>
+                <div class="knob-title">decay</div>
+                <div class="knob-title">sustain</div>
+                <div class="knob-title">release</div>
+            </div>
             <div class="envelope-knobs-container">
                 <div class="knob-container" id="attack-knob">
                     <div class="knob-outer">
@@ -31,7 +83,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="knob-value" id="attack-value"></div>
+                    <div class="knob-value" id="attack-value">-</div>
                 </div>
                 <div class="knob-container" id="decay-knob">
                     <div class="knob-outer">
@@ -41,7 +93,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="knob-value" id="decay-value"></div>
+                    <div class="knob-value" id="decay-value">-</div>
                 </div>
                 <div class="knob-container" id="sustain-knob">
                     <div class="knob-outer">
@@ -51,7 +103,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="knob-value" id="sustain-value"></div>
+                    <div class="knob-value" id="sustain-value">-</div>
                 </div>
                 <div class="knob-container" id="release-knob">
                     <div class="knob-outer">
@@ -61,9 +113,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="knob-value" id="release-value"></div>
+                    <div class="knob-value" id="release-value">-</div>
                 </div>
             </div>
+        </div>
+        <button id="add-occilator-button">add occilator</button>
+        <div class="oscillators">
         </div>
     </div>
 
